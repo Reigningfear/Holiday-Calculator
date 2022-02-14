@@ -354,9 +354,9 @@ let holidays =
       {"observedday":d.toString() == new Date(YearOfDate,11,26).toString() && !datefns.isSaturday(d) && !datefns.isSunday(d), "actualday":d.toString() == new Date(YearOfDate,10,2).toString(),"actualday": d.toString() == new Date(YearOfDate,11,25).toString(),"name":"Second Day of Christmas","type":"fixed"}
     ],
 
-    "us":[//change this if possible to avoid calling this function for every row.
+    "us":[
 
-        //Additionally, I needed to add a year to the first part of the condition to compare the dates properly.
+        
         {"observedday": (datefns.addDays(d,1).toString() == new Date(datefns.getYear(datefns.addYears(d,1)),0,1).toString() && datefns.isFriday(d)) || (datefns.subDays(d,1).toString() == new Date(YearOfDate,0,1).toString() && datefns.isMonday(d)) || (d.toString() == new Date(YearOfDate,0,1).toString() && !datefns.isSaturday(d)  && !datefns.isSunday(d)), "actualday": d.toString() == new Date(datefns.getYear(datefns.addYears(d,1)),0,1).toString(), "name": "New Years Day", "type":"fixed"},
         
         // Labor Day floating Monday between the 1st and 7th of September
